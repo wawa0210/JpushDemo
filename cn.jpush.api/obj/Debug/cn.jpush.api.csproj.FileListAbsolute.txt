@@ -1,0 +1,12 @@
+C:\Users\xiao\Desktop\jpush-api-csharp-client-develop\cn.jpush.api\bin\Debug\jpush-api.dll
+C:\Users\xiao\Desktop\jpush-api-csharp-client-develop\cn.jpush.api\bin\Debug\jpush-api.pdb
+C:\Users\xiao\Desktop\jpush-api-csharp-client-develop\cn.jpush.api\bin\Debug\Newtonsoft.Json.dll
+C:\Users\xiao\Desktop\jpush-api-csharp-client-develop\cn.jpush.api\obj\Debug\cn.jpush.api.csprojResolveAssemblyReference.cache
+C:\Users\xiao\Desktop\jpush-api-csharp-client-develop\cn.jpush.api\obj\Debug\jpush-api.dll
+C:\Users\xiao\Desktop\jpush-api-csharp-client-develop\cn.jpush.api\obj\Debug\jpush-api.pdb
+D:\project\JpushDemo\cn.jpush.api\bin\Debug\jpush-api.dll
+D:\project\JpushDemo\cn.jpush.api\bin\Debug\jpush-api.pdb
+D:\project\JpushDemo\cn.jpush.api\bin\Debug\Newtonsoft.Json.dll
+D:\project\JpushDemo\cn.jpush.api\obj\Debug\cn.jpush.api.csprojResolveAssemblyReference.cache
+D:\project\JpushDemo\cn.jpush.api\obj\Debug\jpush-api.dll
+D:\project\JpushDemo\cn.jpush.api\obj\Debug\jpush-api.pdb

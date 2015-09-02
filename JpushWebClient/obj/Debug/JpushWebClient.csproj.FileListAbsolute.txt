@@ -1,0 +1,6 @@
+D:\project\JpushDemo\JpushWebClient\bin\JpushWebClient.dll.config
+D:\project\JpushDemo\JpushWebClient\bin\JpushWebClient.dll
+D:\project\JpushDemo\JpushWebClient\bin\JpushWebClient.pdb
+D:\project\JpushDemo\JpushWebClient\obj\Debug\JpushWebClient.csprojResolveAssemblyReference.cache
+D:\project\JpushDemo\JpushWebClient\obj\Debug\JpushWebClient.dll
+D:\project\JpushDemo\JpushWebClient\obj\Debug\JpushWebClient.pdb
