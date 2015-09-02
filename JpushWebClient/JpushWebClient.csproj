@@ -57,6 +57,25 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DemoIndex.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -68,7 +87,32 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemoIndex.aspx.cs">
+      <DependentUpon>DemoIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DemoIndex.aspx.designer.cs">
+      <DependentUpon>DemoIndex.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cn.jpush.api.example\cn.jpush.api.example.csproj">
+      <Project>{f0575c50-114f-4cb6-889a-53fba68d2ba4}</Project>
+      <Name>cn.jpush.api.example</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cn.jpush.api.test\cn.jpush.api.test.csproj">
+      <Project>{da7d243f-378f-414a-913a-38065d0e9be8}</Project>
+      <Name>cn.jpush.api.test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cn.jpush.api\cn.jpush.api.csproj">
+      <Project>{e281d457-f259-4f0b-8608-16c81d8ae97b}</Project>
+      <Name>cn.jpush.api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JpushHelp\JpushHelp.csproj">
+      <Project>{3d298866-d55c-4a91-9414-3ae90e86f031}</Project>
+      <Name>JpushHelp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

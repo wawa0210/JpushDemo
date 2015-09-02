@@ -4,3 +4,12 @@ D:\project\JpushDemo\JpushWebClient\bin\JpushWebClient.pdb
 D:\project\JpushDemo\JpushWebClient\obj\Debug\JpushWebClient.csprojResolveAssemblyReference.cache
 D:\project\JpushDemo\JpushWebClient\obj\Debug\JpushWebClient.dll
 D:\project\JpushDemo\JpushWebClient\obj\Debug\JpushWebClient.pdb
+D:\project\JpushDemo\JpushWebClient\bin\cn.jpush.api.test.dll
+D:\project\JpushDemo\JpushWebClient\bin\jpush-api.dll
+D:\project\JpushDemo\JpushWebClient\bin\jpush-example.exe
+D:\project\JpushDemo\JpushWebClient\bin\JpushHelp.dll
+D:\project\JpushDemo\JpushWebClient\bin\Newtonsoft.Json.dll
+D:\project\JpushDemo\JpushWebClient\bin\jpush-example.pdb
+D:\project\JpushDemo\JpushWebClient\bin\cn.jpush.api.test.pdb
+D:\project\JpushDemo\JpushWebClient\bin\jpush-api.pdb
+D:\project\JpushDemo\JpushWebClient\bin\JpushHelp.pdb

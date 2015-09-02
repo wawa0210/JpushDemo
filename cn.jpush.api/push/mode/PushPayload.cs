@@ -74,6 +74,14 @@ namespace cn.jpush.api.push.mode
                                    null,
                                    new Options());
         }
+        public static PushPayload AlertPersnoal(String alert)
+        {
+            return new PushPayload(Platform.android(),
+                                   Audience.s_registrationId("0304819befc"),
+                                   new Notification().setAlert(alert),
+                                   null,
+                                   new Options());
+        }
         //* The shortcut of building a simple message object to all platforms and all audiences
         //*/
         public static PushPayload MessageAll(String msgContent)

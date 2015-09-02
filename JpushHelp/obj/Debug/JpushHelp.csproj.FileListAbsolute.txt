@@ -1,0 +1,5 @@
+D:\project\JpushDemo\JpushHelp\bin\Debug\JpushHelp.dll
+D:\project\JpushDemo\JpushHelp\bin\Debug\JpushHelp.pdb
+D:\project\JpushDemo\JpushHelp\obj\Debug\JpushHelp.csprojResolveAssemblyReference.cache
+D:\project\JpushDemo\JpushHelp\obj\Debug\JpushHelp.dll
+D:\project\JpushDemo\JpushHelp\obj\Debug\JpushHelp.pdb
