@@ -36,7 +36,7 @@ namespace cn.jpush.api.test
             JPushClient pushClient = new JPushClient(APP_KEY, MASTER_SECRET);
             try
             {
-                var result = pushClient.SendPush(PushPayload.AlertAll("alert"));
+                var result = pushClient.SendPush(PushPayload.SendAlertPushToAll("alert"));
                 Assert.IsTrue(result.isResultOK());
             }
             catch (Exception e)

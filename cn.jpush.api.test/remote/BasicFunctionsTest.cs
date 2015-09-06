@@ -10,7 +10,7 @@ namespace cn.jpush.api.test.remote
         [TestMethod]
         public void sendSimpleNotification_Pall_Ndefault() 
         {
-	        PushPayload payload = PushPayload.AlertAll("Pall Nall default alert");
+	        PushPayload payload = PushPayload.SendAlertPushToAll("Pall Nall default alert");
 		    var result = _client.SendPush(payload);
             Assert.IsTrue(result.isResultOK());
 	    }

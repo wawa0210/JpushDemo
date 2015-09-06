@@ -15,7 +15,7 @@ namespace cn.jpush.api.test.remote
         {
             String appKey = "dd1066407b044738b6479274";
             JPushClient client = new JPushClient(appKey, MASTER_SECRET);
-            PushPayload payload = PushPayload.AlertAll(ALERT);
+            PushPayload payload = PushPayload.SendAlertPushToAll(ALERT);
             try
             {
                 var result = _client.SendPush(payload);
@@ -30,7 +30,7 @@ namespace cn.jpush.api.test.remote
         {
             String masterSecret = "2b38ce69b1de2a7fa95706e2";
             JPushClient client = new JPushClient(masterSecret, APP_KEY);
-            PushPayload payload = PushPayload.AlertAll(ALERT);
+            PushPayload payload = PushPayload.SendAlertPushToAll(ALERT);
             try
             {
                 var result = _client.SendPush(payload);

@@ -225,6 +225,11 @@ namespace cn.jpush.api
             return _deviceClient.deleteAlias(alias, platform);
         }
 
+
+        public void SendAndroidAlertSinglePush(PushPayload pushPayload)
+        {
+            throw new NotImplementedException();
+        }
     }
    
 }

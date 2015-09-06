@@ -18,7 +18,7 @@ namespace cn.jpush.api.push.mode
     {
 
         private JsonSerializerSettings jSetting;
-        private const  String PLATFORM = "platform";
+        private const String PLATFORM = "platform";
         private const String AUDIENCE = "audience";
         private const String NOTIFICATION = "notification";
         private const String MESSAGE = "message";
@@ -29,9 +29,9 @@ namespace cn.jpush.api.push.mode
 
         //serializaiton property
         [JsonConverter(typeof(PlatformConverter))]
-        public Platform platform{get;set;}
+        public Platform platform { get; set; }
         [JsonConverter(typeof(AudienceConverter))]
-        public Audience audience{get;set;}
+        public Audience audience { get; set; }
         public Notification notification { get; set; }
         public Message message { get; set; }
         public Options options { get; set; }
@@ -63,10 +63,27 @@ namespace cn.jpush.api.push.mode
             jSetting.NullValueHandling = NullValueHandling.Ignore;
             jSetting.DefaultValueHandling = DefaultValueHandling.Ignore;
         }
+
+        public PushPayload(Platform platform, Audience audience, Message message , Options options = null)
+        {
+            Debug.Assert(platform != null);
+            Debug.Assert(audience != null);
+            Debug.Assert(message != null);
+
+            this.platform = platform;
+            this.audience = audience;
+            this.message = message;
+            this.options = options;
+
+            jSetting = new JsonSerializerSettings();
+            jSetting.NullValueHandling = NullValueHandling.Ignore;
+            jSetting.DefaultValueHandling = DefaultValueHandling.Ignore;
+        }
+
         /**
          * The shortcut of building a simple alert notification object to all platforms and all audiences
         */
-        public static PushPayload AlertAll(String alert)
+        public static PushPayload SendAlertPushToAll(String alert)
         {
             return new PushPayload(Platform.all(),
                                    Audience.all(),
@@ -74,19 +91,60 @@ namespace cn.jpush.api.push.mode
                                    null,
                                    new Options());
         }
-        public static PushPayload AlertPersnoal(String alert)
+
+        #region  android push
+
+        /// <summary>
+        /// 安卓端广播
+        /// </summary>
+        /// <param name="alert"></param>
+        /// <returns></returns>
+        public static PushPayload SendAndroidAlertPushToAll(Message message)
         {
             return new PushPayload(Platform.android(),
-                                   Audience.s_registrationId("0304819befc"),
-                                   new Notification().setAlert(alert),
+                                   Audience.all(),
+                                    Notification.android(message.msg_content, message.title),
                                    null,
                                    new Options());
         }
+
+        /// <summary>
+        /// 按照设备号批量发送 android
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="paramsId"></param>
+        /// <returns></returns>
+        public static PushPayload SendAndroidAlertBatchPush(Message message, string[] paramsId)
+        {
+            return new PushPayload(Platform.android(),
+                                   Audience.s_registrationId(paramsId),
+                                   Notification.android(message.msg_content,message.title),
+                                   null,
+                                   new Options());
+        }
+
+        /// <summary>
+        /// 按照设备号发送 android  单设备
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="registerId"></param>
+        /// <returns></returns>
+        public static PushPayload SendAndroidAlertSinglePush(Message message, string registerId)
+        {
+            return new PushPayload(Platform.android(),
+                                   Audience.s_registrationId(registerId),
+                                   Notification.android(message.msg_content, message.title),
+                                   null,
+                                   new Options());
+        }
+
+        #endregion
+
         //* The shortcut of building a simple message object to all platforms and all audiences
         //*/
         public static PushPayload MessageAll(String msgContent)
         {
-            return new PushPayload( Platform.all(),
+            return new PushPayload(Platform.all(),
                                    Audience.all(),
                                    null,
                                    Message.content(msgContent),
@@ -125,7 +183,7 @@ namespace cn.jpush.api.push.mode
             }
             this.options.time_to_live = timeToLive;
         }
-        public int  GetSendno()
+        public int GetSendno()
         {
             if (this.options != null)
                 return this.options.sendno;
@@ -134,10 +192,10 @@ namespace cn.jpush.api.push.mode
         public bool IsGlobalExceedLength()
         {
             int messageLength = 0;
-            if (message!= null)
+            if (message != null)
             {
-               var messageJson = JsonConvert.SerializeObject(this.message, jSetting);
-               messageLength += UTF8Encoding.UTF8.GetBytes(messageJson).Length;
+                var messageJson = JsonConvert.SerializeObject(this.message, jSetting);
+                messageLength += UTF8Encoding.UTF8.GetBytes(messageJson).Length;
             }
             if (this.notification == null)
             {
@@ -152,7 +210,7 @@ namespace cn.jpush.api.push.mode
                 }
                 return messageLength > MAX_GLOBAL_ENTITY_LENGTH;
             }
-           
+
         }
         public bool IsIosExceedLength()
         {
@@ -168,7 +226,7 @@ namespace cn.jpush.api.push.mode
                 }
                 else
                 {
-                    if (!(this.notification.alert==null))
+                    if (!(this.notification.alert == null))
                     {
                         string jsonText;
                         using (StringWriter sw = new StringWriter())
@@ -184,10 +242,10 @@ namespace cn.jpush.api.push.mode
                     {
                         // No iOS Payload
                     }
-                   
+
 
                 }
-                
+
             }
             return false;
         }
@@ -199,7 +257,7 @@ namespace cn.jpush.api.push.mode
         {
             Preconditions.checkArgument(!(null == audience || null == platform), "audience and platform both should be set.");
             Preconditions.checkArgument(!(null == notification && null == message), "notification or message should be set at least one.");
-            if (audience!=null)
+            if (audience != null)
             {
                 audience.Check();
             }

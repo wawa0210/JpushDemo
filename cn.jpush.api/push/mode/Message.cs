@@ -29,7 +29,7 @@ namespace cn.jpush.api.push.mode
             this.content_type = null;
             this.extras = null;
         }
-        private Message(String msgContent, String title, String contentType)
+        public Message(String msgContent, String title, String contentType)
         {
             Preconditions.checkArgument(!(msgContent == null), "msgContent should be set");
 
